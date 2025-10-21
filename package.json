@@ -21,6 +21,9 @@
   "scripts": {
     "clean": "rimraf ./dist ./esm ./coverage ./node_modules",
     "scaffold": "tsx .scripts/index.ts scaffold",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
     "docs:gen": "tsx .scripts/index.ts generate-docs",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
@@ -56,6 +59,7 @@
     }
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@eslint/js": "^9.16.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
