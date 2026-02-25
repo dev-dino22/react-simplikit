@@ -219,11 +219,11 @@ describe('useStorageState', () => {
     });
 
     it('should throw error when value is not serializable', async () => {
-      expect(
+      await expect(
         async () => await renderHookSSR(() => useStorageState('test-key', { storage, defaultValue: () => 'world' }))
       ).rejects.toThrow('Received a non-serializable value');
 
-      expect(
+      await expect(
         async () =>
           await renderHookSSR(() => useStorageState('test-key', { storage, defaultValue: new (class Cls {})() }))
       ).rejects.toThrow('Received a non-serializable value');
